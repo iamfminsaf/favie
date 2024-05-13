@@ -6,9 +6,11 @@ const App = () => {
     const [datas, setDatas] = useState([]);
 
     const getDatas = async () => {
-        await axios.get("http://localhost:8000/data").then((res) => {
-            setDatas(res.data);
-        });
+        await axios
+            .get("https://favie-server.onrender.com/data")
+            .then((res) => {
+                setDatas(res.data);
+            });
     };
 
     useEffect(() => {
@@ -16,9 +18,11 @@ const App = () => {
     }, []);
 
     const deleteData = async (id) => {
-        await axios.delete(`http://localhost:8000/data/${id}`).then((res) => {
-            setDatas(res.data);
-        });
+        await axios
+            .delete(`https://favie-server.onrender.com/data/${id}`)
+            .then((res) => {
+                setDatas(res.data);
+            });
     };
 
     const tryAddData = () => {
@@ -35,7 +39,11 @@ const App = () => {
         const genre = e.target.elements.genre.value.split(" ");
         console.log(genre);
         await axios
-            .post("http://localhost:8000/data", { title, rate, genre })
+            .post("https://favie-server.onrender.com//data", {
+                title,
+                rate,
+                genre,
+            })
             .then((res) => {
                 setDatas(res.data);
             });

@@ -10,7 +10,7 @@ export const Movie = (probs) => {
 
     const putLike = async () => {
         const newLike = await axios
-            .put(`http://localhost:8000/data/${_id}`)
+            .put(`https://favie-server.onrender.com/data/${_id}`)
             .then((res) => {
                 return res.data.like;
             });
