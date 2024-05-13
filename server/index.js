@@ -9,11 +9,7 @@ const app = express();
 
 const port = process.env.PORT;
 
-app.use(
-    cors({
-        origin: "https://favie.onrender.com/",
-    })
-);
+app.use(cors());
 app.use(express.json());
 
 app.use("/data", dataRouter);
