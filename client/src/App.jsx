@@ -39,7 +39,7 @@ const App = () => {
         const genre = e.target.elements.genre.value.split(" ");
         console.log(genre);
         await axios
-            .post("https://favie-server.onrender.com//data", {
+            .post("https://favie-server.onrender.com/data", {
                 title,
                 rate,
                 genre,
